@@ -4,7 +4,7 @@ import ValueProposition from './ValueProposition'
 
 const AboutUs = () => {
   return (
-    <div className='w-[90%] bg-[$f9f9f9] bg-[#ffffe6] rounded-lg p-[40px] shadow-[0_0_10px_rgba(0,0,0,0.1)] mx-auto mt-14'>
+    <div id="about" className='w-[90%] bg-[$f9f9f9] bg-[#ffffe6] rounded-lg p-[40px] shadow-[0_0_10px_rgba(0,0,0,0.1)] mx-auto mt-14'>
         <h1 className='text-2xl font-semibold font-heading mb-8'>
             About Us
         </h1>

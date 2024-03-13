@@ -11,7 +11,7 @@ import Footer from '../components/homepage/Footer'
 const HomePage = () => {
   return (
     <>
-    <PageHeader/>
+    <PageHeader/> 
     <Banner/>
     <FeaturedProducts/>
     <ExploreByCategory/>

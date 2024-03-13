@@ -1,26 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Cart from './Cart'
+import { useMyGeneralContext } from '../../context/AppContext'
+
 
 const PageHeader = () => {
+  const [isCartOpen, setIsCartOpen] = useState(false)
+  const {cartNumber} =useMyGeneralContext()
+
   const NAV_LINKS=[
     {
       name:"Home",
-      link:""   
+      link:"/"   
     },
+    // {
+    //   name:"Products",
+    //   link:""   
+    // },
+    
     {
       name:"Products",
       link:""   
     },
     {
-      name:"About Us",
+      name:"Hiring",
       link:""   
     },
     {
-      name:"Contact",
-      link:""   
+      name:"About Us",
+      link:"#about"
     },
     {
       name:"Testimonials",
-      link:""   
+      link:"#testimonials"   
     },
   ]
 
@@ -38,7 +49,7 @@ const PageHeader = () => {
                     return <a key={index} href={`${link.link}`}><li className='font-semibold text-lg'>{link.name}</li></a>
                   })
                   
-                }
+                } 
                 </ul>
               </div >
               {/* <div className='flex '> */}
@@ -59,13 +70,15 @@ const PageHeader = () => {
                   </div>
                 {/* <div className='relative flex items-center h-full w-full '> */}
 
-                  <button className='relative ml-4'>
+                  <button 
+                  onClick={()=>setIsCartOpen(true)}
+                  className='relative ml-4'>
                     {/* __________ cart button __________ */}
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
                     </svg>
                     {/* ______ counter _____  */}
-                    <span className='absolute bg-red-500 text-white -top-1 -right-2 rounded-full w-[1.2rem] h-[1.2rem] flex items-center justify-center'>0</span>
+                    <span className='absolute bg-red-500 text-white -top-1 -right-2 rounded-full w-[1.2rem] h-[1.2rem] text-xs flex items-center justify-center'>{cartNumber}</span>
 
                   </button>
 
@@ -82,6 +95,12 @@ const PageHeader = () => {
 
               {/* </div> */}
           {/* </div> */}
+        </div>
+
+
+        {/* _____________________ cart modal  _______________________  */}
+        <div className={`fixed z-10 bg-[rgba(0,0,0,0.3)] ${isCartOpen? "":"hidden" } inset-0`}>
+          <Cart setIsCartOpen={setIsCartOpen}/>
         </div>
     </div>
 

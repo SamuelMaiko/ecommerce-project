@@ -5,9 +5,9 @@ const Testimonials = () => {
     
 
   return (
-    <div className='w-[90%] mx-auto mt-14'>
+    <div id="testimonials" className='w-[90%] mx-auto mt-14'>
         <h1 className='text-2xl font-semibold font-heading mb-8'>
-            What Our Customers say
+            Testimonials
         </h1> 
 
         <TestimonialCard/>
