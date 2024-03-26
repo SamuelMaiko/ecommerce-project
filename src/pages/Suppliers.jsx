@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import SingleSupplier from '../components/suppliers/SingleSupplier'
 import instance from '../axios/instance';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { getCookie } from '../Cookies/Cookie';
 
 const Suppliers = () => {
     const [suppliers, setSupplers] = useState([]);
@@ -18,6 +20,19 @@ const Suppliers = () => {
   
       getSuppliers();
     }, []);
+
+    const navigate=useNavigate()
+  const {pathname} = useLocation()
+
+  useEffect(()=>{
+    const accessToken=getCookie("access_token")
+    if (pathname!=='/login' || pathname!=='/signup'){
+      
+      if (!accessToken){
+        navigate("/login")
+      }
+    }
+  },[])
   return (
     <div className='w-full  bg-white'>
         <div className=' w-[95%] mx-auto h-full bg-white grid grid-cols-2'>

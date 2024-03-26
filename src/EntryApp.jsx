@@ -13,6 +13,7 @@ import Chat from "./pages/Chat";
 import { getCookie } from "./Cookies/Cookie";
 import Suppliers from "./pages/Suppliers";
 import SuppliersDetailPage from "./components/suppliers/SuppliersDetailPage";
+import Subscriptions from "./pages/Subscriptions";
 
 const EntryApp = () => {
 
@@ -39,6 +40,7 @@ const EntryApp = () => {
         <Route path="/chatbot" element={<ChatBot />} />
         <Route path="/chat" element={<Chat />} />
         <Route path="/hiring" element={<Hiring />} />
+        <Route path="/subscriptions" element={<Subscriptions />} />
         <Route path="/suppliers" element={<Suppliers />} />
         <Route path="/suppliers/:supplier_id" element={<SuppliersDetailPage />} />
         <Route path="/login" element={<Login />} />

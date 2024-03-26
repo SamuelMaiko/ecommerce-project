@@ -36,6 +36,10 @@ const PageHeader = () => {
       name: "Suppliers",
       link: "/suppliers",
     },
+    {
+      name: "Subscriptions",
+      link: "/subscriptions",
+    },
     // {
     //   name: "About Us",
     //   link: "#about",
@@ -89,13 +93,13 @@ const PageHeader = () => {
                     }`}
                     href={`${link.link}`}
                   >
-                    <li className="font-normal text-lg">{link.name}</li>
+                    <li className="font-normal text-lg hover:text-blue-200 transition-colors duration-300">{link.name}</li>
                   </a>
                 );
               }
               return (
                 <NavLink key={index} to={`${link.link}`}>
-                  <li className="font-normal text-lg">{link.name}</li>
+                  <li className={`font-normal text-lg transition-colors duration-400 delay-100 hover:border-white ${pathname=='/chatbot' || pathname=='/chat' ||id && /^\d+$/.test(id)?"border-blue-500":"border-primary"}  border-b-2`}>{link.name}</li>
                 </NavLink>
               );
             })}

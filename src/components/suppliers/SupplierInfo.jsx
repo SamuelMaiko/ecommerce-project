@@ -1,11 +1,11 @@
 import React from 'react'
 
-const SupplierInfo = () => {
+const SupplierInfo = ({phone_number, email}) => {
   return (
     <div>
         <h1 className='text-blue-500 font-bold my-4'>Info</h1>
         <div>
-            <p>073653653737</p>
+            <p>{phone_number}</p>
             <p className='flex justify-between items-center w-[4.5rem] '>
                 <span className='text-sm text-gray-600'>Mobile </span>
                 <span className='text-gray-600 '>
@@ -16,7 +16,7 @@ const SupplierInfo = () => {
             </p>
         </div>
         <div className='my-4'>
-            <p>supplier@gmail.com</p>
+            <p>{email}</p>
             <p className='flex justify-between items-center w-[4.5rem] '>
                 <span className='text-sm text-gray-600'>Email </span>
                 <span className='text-gray-600 '>

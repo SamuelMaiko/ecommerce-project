@@ -3,6 +3,8 @@ import TestimonialCard from "../components/homepage/TestimonialCard";
 import Product from "../components/products/Product";
 import HorizontalSeparator from "../components/common/HorizontalSeparator";
 import instance from "../axios/instance";
+import { useLocation, useNavigate } from "react-router-dom";
+import { getCookie } from "../Cookies/Cookie";
 
 const Products = () => {
   const CATEGORIES = ["All", "AI Picks", "Top"];
@@ -23,6 +25,20 @@ const Products = () => {
 
     getProducts();
   }, []);
+
+
+  const navigate=useNavigate()
+  const {pathname} = useLocation()
+
+  useEffect(()=>{
+    const accessToken=getCookie("access_token")
+    if (pathname!=='/login' || pathname!=='/signup'){
+      
+      if (!accessToken){
+        navigate("/login")
+      }
+    }
+  },[])
 
   return (
     <div className="w-[95%] mx-auto">

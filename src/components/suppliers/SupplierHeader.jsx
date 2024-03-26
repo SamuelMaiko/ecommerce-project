@@ -1,21 +1,30 @@
 import React from 'react'
 import { useMyGeneralContext } from '../../context/AppContext'
+import { useNavigate } from 'react-router-dom'
 
-const SupplierHeader = () => {
+const SupplierHeader = ({name, email, image}) => {
     const {backendDomain}=useMyGeneralContext()
+    const navigate=useNavigate()
   return (
     <div className="relative w-[90%] mx-auto h-[8rem] bg-blue-500 flex items-center">
+        <button 
+        onClick={()=>navigate(-1)}
+        className='absolute -top-5 -left-12 text-white'>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
+            </svg>
+        </button>
         <div className='w-fit flex justify-center items-center gap-3'>
             <div className='w-[7rem] h-[7rem] bg-white rounded-full overflow-hidden'>
                 <img
-                src={`${backendDomain}${backendDomain}`}
+                src={`${backendDomain}${image}`}
                 className="h-full object-cover object-center w-full"
                 alt=""
                 />
             </div>
             <div className='text-white'>
-                <p>Supplier Supliers</p>
-                <p className='text-sm text-gray-200'>supplier@gmail.com</p>
+                <p>{name}</p>
+                <p className='text-sm text-gray-200'>{email}</p>
             </div>
         </div>
         {/* _____ chat icon start  */}

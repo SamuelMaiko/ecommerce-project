@@ -27,7 +27,7 @@ const ChatInput = ({ ontestChat, onsetTestChat }) => {
         value={message}
         onChange={handleChange}
         placeholder="Type your message..."
-        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500"
+        className="w-full px-4 py-3 rounded-lg border border-gray-500 focus:outline-none focus:border-blue-500"
       />
       <button
         type="submit"

@@ -38,7 +38,7 @@ const ChatBot = () => {
                 </div>
                 <button 
                 onClick={()=>navigate('/chat')}
-                className='mt-10 shadow-[2px_2px_10px_rgba(0,0,0,0.1)] bg-[#ffa500] hover:bg-[#ff6c00] transition-colors duration-300 text-white font-button border-none rounded-3xl px-[30px] py-[10px] text-[20px]'
+                className='mt-32 shadow-[2px_2px_10px_rgba(0,0,0,0.15)] bg-[#f44336] hover:bg-[#d32f2f] transition-colors duration-300 text-white font-button border-none rounded-3xl px-[50px] py-[10px] text-[20px]'
                 >
                     Chat with Boti
                 </button>
