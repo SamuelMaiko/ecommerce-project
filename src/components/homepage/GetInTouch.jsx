@@ -8,7 +8,7 @@ const GetInTouch = () => {
       <h1 className="text-2xl text-[#28A745] font-semibold font-heading mb-4">
         Get In Touch
       </h1>
-      <div className="flex gap-8 pt-8">
+      <div className="flex flex-col md:flex-row gap-8 pt-8">
         <SendEmailForm />
 
         <ContactUs />

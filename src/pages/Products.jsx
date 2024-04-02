@@ -26,34 +26,34 @@ const Products = () => {
     getProducts();
   }, []);
 
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
 
-  const navigate=useNavigate()
-  const {pathname} = useLocation()
-
-  useEffect(()=>{
-    const accessToken=getCookie("access_token")
-    if (pathname!=='/login' || pathname!=='/signup'){
-      
-      if (!accessToken){
-        navigate("/login")
+  useEffect(() => {
+    const accessToken = getCookie("access_token");
+    if (pathname !== "/login" || pathname !== "/signup") {
+      if (!accessToken) {
+        navigate("/login");
       }
     }
-  },[])
+  }, []);
 
   return (
     <div className="w-[95%] mx-auto">
       <div className="mt-2 flex gap-x-8 items-center">
-        <div className=" flex gap-4">
+        <div className=" flex gap-1 md:gap-4">
           {CATEGORIES.map((category, index) => {
             return (
               <button
                 onClick={() => setActiveCategory(index)}
                 key={index}
                 className={`
-                ${category=='AI Picks'?"text-red-500 font-semibold ":""}
+                ${category == "AI Picks" ? "text-red-500 font-semibold " : ""}
                 ${
-                  activeCategory == index ? "bg-black text-[#f5f5f5] " : "bg-blue-100"
-                } px-5 py-2 text-sm rounded-3xl  shadow-[2px_2px_4px_rgba(0,0,0,0.1)]
+                  activeCategory == index
+                    ? "bg-black text-[#f5f5f5] "
+                    : "bg-blue-100"
+                } px-3 md:px-5 py-1 md:py-2 text-sm rounded-3xl  shadow-[2px_2px_4px_rgba(0,0,0,0.1)]
                       hover:bg-black hover:text-[#f5f5f5] transition-colors duration-800 `}
               >
                 {category}

@@ -24,7 +24,7 @@ const ExploreByCategory = () => {
       <h1 className="text-2xl text-[#28A745] font-semibold font-heading mb-4">
         Categories
       </h1>
-      <div className="grid grid-cols-4 gap-[1.25rem]">
+      <div className=" items-center grid grid-cols-2 md:grid-cols-4 gap-[1.25rem]">
         {categories &&
           categories.map((category, index) => {
             return <CategoryTile key={index} {...category} />;

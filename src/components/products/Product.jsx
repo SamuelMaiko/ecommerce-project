@@ -67,8 +67,8 @@ const Product = ({
   };
 
   return (
-    <div className="w-[76%] mx-auto rounded-lg overflow-hidden shadow-[0_0_10px_rgba(0,0,0,0.12)]  ">
-      <div className="flex">
+    <div className="w-[92%] md:w-[76%] mx-auto rounded-lg overflow-hidden shadow-[0_0_10px_rgba(0,0,0,0.12)]  ">
+      <div className="flex flex-col md:flex-row">
         <div className="w-[35rem] h-[29rem] flex-1 rounded-lg overflow-hidden">
           <img
             src={`${backendDomain}${image}`}
@@ -136,13 +136,17 @@ const Product = ({
               Add to cart
             </button>
           </div>
-          <div className="mt-8 mb-2 text-lg text-gray-600 font-body">
-            <p className="font-medium text-black font-heading">Description</p>
-            <p className="text-gray-400 text-sm">{description}</p>
+          <div className="mt-8 md:mb-2 text-lg text-gray-600 font-body">
+            <p className="font-medium text-black text-sm md:text-md font-heading">
+              Description
+            </p>
+            <p className="text-gray-400 text-xs md:text-sm h-[2rem] overflow-hidden md:h-fit">
+              {description}
+            </p>
           </div>
         </div>
       </div>
-      <div className="mt-2 grid grid-cols-3 gap-4">
+      <div className="md:mt-2 grid grid-cols-3 gap-1 md:gap-4">
         {PRODUCT_DETAILS.map((category, index) => {
           return (
             <button
@@ -150,7 +154,7 @@ const Product = ({
               key={index}
               className={`
               ${activeSection == index ? "bg-primary text-white" : ""}
-              px-2 py-2 text-md rounded-3xl bg-[#f5f5f5] shadow-[2px_2px_4px_rgba(0,0,0,0.1)] text-black 
+              px-2 py-1 md:py-2 text-xs md:text-md rounded-3xl bg-[#f5f5f5] shadow-[2px_2px_4px_rgba(0,0,0,0.1)] text-black 
                     hover:bg-primary font-button font-semibold hover:text-[#f5f5f5] transition-colors duration-300 `}
             >
               {category}

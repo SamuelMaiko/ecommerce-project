@@ -25,7 +25,7 @@ const Review = ({ OnactiveSection }) => {
         <input value="1" name="rate" id="star1" type="radio"></input>
         <label title="text" onChange={() => {}} htmlFor="star1"></label>
       </div>
-      <p className="mt-4 pl-6 text-sm font-body">
+      <p className="mt-4 pl-6 text-xs md:text-sm font-body">
         I absolutely love the quartzite I purchased! It&apos;s exactly what I
         was looking for to use in my DIY projects. The color is beautiful, and
         the quality is top-notch. Plus, it arrived quickly and well-packaged.

@@ -2,7 +2,7 @@ import React from "react";
 
 const SendEmailForm = () => {
   return (
-    <form className="w-[43rem]">
+    <form className="w-full md:w-[43rem]">
       <input
         className="pl-4 outline-none border border-gray-400 rounded-[5px] w-full h-[3.1rem] transition-all duration-300 focus:border-[#ffcc66] focus:ring-2 focus:ring-[#ffd699]"
         type="text"
@@ -29,7 +29,7 @@ const SendEmailForm = () => {
 
       <button
         type="submit"
-        className="mt-4 shadow-[2px_2px_10px_rgba(0,0,0,0.1)] bg-[#28A745] hover:bg-[#339966] transition-colors duration-300 text-white font-button border-none rounded-[5px] px-[20px] py-[10px] text-[18px]"
+        className="mt-4 shadow-[2px_2px_10px_rgba(0,0,0,0.1)] bg-[#28A745] hover:bg-[#339966] transition-colors duration-300 text-white font-button border-none rounded-[5px] px-[20px] py-[10px] text-[16px] md:text-[18px]"
       >
         Send Message
       </button>

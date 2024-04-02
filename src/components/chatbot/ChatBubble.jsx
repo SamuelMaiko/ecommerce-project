@@ -1,16 +1,16 @@
-import React from 'react';
+import React from "react";
 
 const ChatBubble = ({ message, isUser }) => {
   // Determine the alignment of the chat bubble based on whether it's from the user or the bot
-  const alignment = isUser ? 'justify-end' : 'justify-start';
+  const alignment = isUser ? "justify-end" : "justify-start";
   // Determine the color of the chat bubble based on whether it's from the user or the bot
-  const bgColor = isUser ? 'bg-blue-500' : 'bg-gray-300';
+  const bgColor = isUser ? "bg-blue-500" : "bg-gray-300";
   // Determine the text color of the chat bubble based on whether it's from the user or the bot
-  const textColor = isUser ? 'text-white' : 'text-gray-800';
+  const textColor = isUser ? "text-white" : "text-gray-800";
   // Determine the arrow direction based on whether it's from the user or the bot
-  const arrowDirection = isUser ? 'right-0' : 'left-0';
+  const arrowDirection = isUser ? "right-0" : "left-0";
   // Determine the arrow color based on whether it's from the user or the bot
-  const arrowColor = isUser ? 'border-blue-500' : 'border-gray-300';
+  const arrowColor = isUser ? "border-blue-500" : "border-gray-300";
 
   return (
     <div className={`relative flex ${alignment} mb-2`}>
@@ -24,7 +24,12 @@ const ChatBubble = ({ message, isUser }) => {
       <div className={`absolute ${arrowDirection} bottom-0 -mb-2`}>
         <div
           className={`border-solid border-4 border-transparent`}
-          style={{ borderTopColor: 'transparent', borderBottomColor: arrowColor, borderRightColor: 'transparent', borderLeftColor: 'transparent' }}
+          style={{
+            borderTopColor: "transparent",
+            borderBottomColor: arrowColor,
+            borderRightColor: "transparent",
+            borderLeftColor: "transparent",
+          }}
         ></div>
       </div>
     </div>

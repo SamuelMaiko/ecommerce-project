@@ -26,7 +26,7 @@ const FeaturedProducts = () => {
         <h1 className="text-2xl font-semibold text-[#28A745] font-heading mb-4">
           Featured Products
         </h1>
-        <div className="grid grid-cols-3 gap-[1.35rem]">
+        <div className="flex flex-col items-center md:grid md:grid-cols-3 gap-[1.35rem]">
           {featuredProducts &&
             featuredProducts.map((product, index) => {
               return <ProductCard key={index} {...product} />;

@@ -11,11 +11,11 @@ const AboutUs = () => {
       <h1 className="text-2xl font-semibold text-[#28A745] font-heading mb-8">
         About Us
       </h1>
-      <div className="flex gap-8">
+      <div className="flex flex-col md:flex-row gap-2 md:gap-8">
         <OurStory />
         <ValueProposition />
       </div>
-      <button className="relative flex items-center gap-2 bg-accent text-[18px] hover:text-[#17212B] text-[#2E4A62] transition-colors duration-300 font-button border-none rounded-lg px-[20px] py-[10px] shadow-[2px_2px_4px_rgba(0,0,0,0.15)]">
+      <button className="relative flex items-center gap-2 bg-accent text-[16px] md:text-[18px] hover:text-[#17212B] text-[#2E4A62] transition-colors duration-300 font-button border-none rounded-lg px-[16px] md:px-[20px] py-[10px] shadow-[2px_2px_4px_rgba(0,0,0,0.15)]">
         Explore Our Commitment
         {/* ______ arrow icon __________ */}
         <span className="">
