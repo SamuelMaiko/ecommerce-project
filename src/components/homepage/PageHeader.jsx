@@ -95,7 +95,7 @@ const PageHeader = () => {
       </h1>
       <div
         onClick={() => setMenuOpen(!menuOpen)}
-        className="absolute md:hidden right-2 top-1/2 -translate-y-1/2 cursor-pointer"
+        className="absolute md:hidden right-5 top-1/2 -translate-y-1/2 cursor-pointer"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -127,7 +127,7 @@ const PageHeader = () => {
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
-            stroke="currentColor"
+            stroke="white"
             className="w-8 h-8"
           >
             <path
@@ -144,7 +144,7 @@ const PageHeader = () => {
           </p>
           <ul
             onClick={() => setMenuOpen(false)}
-            className=" flex flex-col items-center pt-8 md:pt-0 text-lg bg-accent md:bg-transparent h-screen md:h-full w-full md:flex-row md:gap-8 "
+            className=" flex flex-col items-center pt-8 md:pt-0 text-lg bg-blue-500 text-white md:bg-transparent h-screen md:h-full w-full md:flex-row md:gap-8 "
           >
             {NAV_LINKS.map((link, index) => {
               if (link.name === "About Us" || link.name === "Testimonials") {

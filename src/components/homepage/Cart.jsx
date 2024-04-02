@@ -101,7 +101,7 @@ const Cart = ({ setIsCartOpen }) => {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-8 h-8"
+          className="w-6 md:w-8 h-6 md:h-8"
         >
           <path
             strokeLinecap="round"
