@@ -10,7 +10,7 @@ const AppContext = ({ children }) => {
   const [cartNumber, setCartNumber] = useState(0);
   const [CART_ITEMS, setCART_ITEMS] = useState([]);
 
-  const backendDomain = "http://localhost:8000";
+  const backendDomain = "https://maiko.pythonanywhere.com";
 
   const getCartItems = async () => {
     try {

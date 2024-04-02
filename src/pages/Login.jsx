@@ -33,8 +33,13 @@ const Login = () => {
       email,
       password,
     };
+    // const LOGIN_DATA = {
+    //   phone_number: "0724282967",
+    //   password: "12345",
+    // };
 
     try {
+      console.log;
       const response = await instance.post("/api/accounts/login/", LOGIN_DATA);
       if (response.status === 200) {
         toast.success("Welcome back! You have successfully logged in");
