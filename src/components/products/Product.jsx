@@ -69,10 +69,10 @@ const Product = ({
   return (
     <div className="w-[92%] md:w-[76%] mx-auto rounded-lg overflow-hidden shadow-[0_0_10px_rgba(0,0,0,0.12)]  ">
       <div className="flex flex-col md:flex-row">
-        <div className="w-[35rem] h-[29rem] flex-1 rounded-lg overflow-hidden">
+        <div className="w-[35rem] h-[23rem] flex-1 rounded-lg overflow-hidden">
           <img
             src={`${backendDomain}${image}`}
-            className="h-full object-cover w-full"
+            className="h-full object-contain object-center w-full"
             alt=""
           />
         </div>

@@ -313,7 +313,7 @@ const PageHeader = () => {
           <button
             className={`${
               pathname === "/login" || pathname === "/signup" ? "" : "hidden"
-            } ml-8 font-semibold`}
+            } ml-8 w-fit font-semibold`}
           >
             <NavLink className="hover:underline" to="/login">
               Login
@@ -326,7 +326,11 @@ const PageHeader = () => {
 
           <div
             onClick={() => setIsProfileOpen((current) => !current)}
-            className="hidden md:flex items-center"
+            className={`${
+              pathname === "/login" || pathname === "/signup"
+                ? "hidden"
+                : " mr-8"
+            } hidden md:flex items-center`}
           >
             <span className="w-[2.7rem] h-[2.7rem] bg-white text-black md:ml-4 rounded-full flex items-center justify-center cursor-pointer">
               <svg
@@ -355,7 +359,7 @@ const PageHeader = () => {
 
       {/* _____________________ cart modal  _______________________  */}
       <div
-        className={`fixed z-10 bg-[rgba(0,0,0,0.3)] ${
+        className={`fixed z-50 bg-[rgba(0,0,0,0.3)] ${
           isCartOpen ? "" : "hidden"
         } inset-0`}
       >

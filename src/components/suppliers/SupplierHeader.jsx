@@ -9,7 +9,7 @@ const SupplierHeader = ({ name, email, image }) => {
     <div className="relative w-[90%] pt-[2rem] md:pt-4 mx-auto md:bg-blue-500 flex items-center">
       <button
         onClick={() => navigate(-1)}
-        className="absolute -top-5 md:-left-12 -left-4 md:text-white text-blue-500"
+        className="absolute -top-5 md:-left-12 -left-4 md:text-white text-blue-500 cursor-pointer"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

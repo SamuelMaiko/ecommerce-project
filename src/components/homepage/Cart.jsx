@@ -18,32 +18,7 @@ const Cart = ({ setIsCartOpen }) => {
   useEffect(() => {
     getCartItems();
   }, []);
-  // const CART_ITEMS = [
-  //   {
-  //     name: "Diatomite Ore",
-  //     quantity: 4,
-  //     price: 500,
-  //   },
-  //   {
-  //     name: "Flouspar",
-  //     quantity: 1,
-  //     price: 1000,
-  //   },
-  //   {
-  //     name: "Soda Ash",
-  //     quantity: 8,
-  //     price: 200,
-  //   },
-  // ];
-  // useEffect(() => {
-  //   const total = CART_ITEMS.reduce(
-  //     (total, obj) => total + (obj["price"] * obj["quantity"] || 0),
-  //     0
-  //   );
-  //   setCartTotal(total);
-  //   setCartNumber(CART_ITEMS.length);
-  // }, []);
-
+  
   return (
     <div
       className={`absolute z-50 top-[50%] -translate-y-1/2 left-[50%] -translate-x-1/2 right-0 text-black w-[92%] h-[90%] transition-transform duration-500 rounded-[4px] bg-[#f5f5f5] shadow-[0_0_18px_rgba(0,0,0,0.2)]`}
