@@ -12,7 +12,7 @@ const CartTable = ({ CART_ITEMS }) => {
           <th>Total</th>
         </tr>
       </thead>
-      <tbody className="text-xs md:text-md">
+      <tbody className="text-xs md:text-[16px]">
         {CART_ITEMS &&
           CART_ITEMS.map((item, index) => {
             return <CartRow key={index} {...item} />;
