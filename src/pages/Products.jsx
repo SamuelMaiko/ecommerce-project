@@ -5,12 +5,14 @@ import HorizontalSeparator from "../components/common/HorizontalSeparator";
 import instance from "../axios/instance";
 import { useLocation, useNavigate } from "react-router-dom";
 import { getCookie } from "../Cookies/Cookie";
+import Loader from "../components/Loader/Loader";
 
 const Products = () => {
   const CATEGORIES = ["All", "AI Picks", "Top"];
   const [activeCategory, setActiveCategory] = useState(0);
 
   const [products, setProducts] = useState([]);
+  const [loadingState, setLoadingState] = useState("loading")
 
   useEffect(() => {
     const getProducts = async () => {
@@ -18,12 +20,14 @@ const Products = () => {
         const response = await instance.get("/api/commerce/products/");
         // console.log(response.data.products);
         setProducts(response.data.products);
+        setLoadingState("completed")
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
 
     getProducts();
+    
   }, []);
 
   const navigate = useNavigate();
@@ -73,7 +77,10 @@ const Products = () => {
         </div>
       </div>
 
-      <div className="mt-4 pb-32 flex flex-col gap-8">
+        <div className={`${loadingState=="loading"?"":"hidden"} h-[35rem]`}>
+          <Loader/>
+        </div>
+      <div className={`${loadingState==="completed"?"":"hidden"} mt-4 pb-32 flex flex-col gap-8`}>
         {products &&
           products.map((product, index) => {
             return (

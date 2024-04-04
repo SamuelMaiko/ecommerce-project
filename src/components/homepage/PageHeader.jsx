@@ -82,7 +82,14 @@ const PageHeader = () => {
 
   return (
     <div
-      className={`relative md:static ${
+      className={`relative md:static
+      ${
+        pathname === "/login" || pathname === "/signup"
+          ? "hidden"
+          : ""
+      }
+      
+      ${
         pathname == "/chatbot" ||
         pathname == "/chat" ||
         (id && /^\d+$/.test(id))
@@ -167,7 +174,11 @@ const PageHeader = () => {
               return (
                 <NavLink key={index} to={`${link.link}`}>
                   <li
-                    className={`font-normal text-lg transition-colors duration-400 delay-100 hover:border-white ${
+                    className={`${
+                      pathname === "/login" || pathname === "/signup"
+                        ? "hidden"
+                        : ""
+                    } font-normal text-lg transition-colors duration-400 delay-100 hover:border-white ${
                       pathname == "/chatbot" ||
                       pathname == "/chat" ||
                       (id && /^\d+$/.test(id))
@@ -295,7 +306,11 @@ const PageHeader = () => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-6 h-6"
+              className={`${
+                pathname === "/login" || pathname === "/signup"
+                  ? "hidden"
+                  : ""
+              } w-6 h-6`}
             >
               <path
                 strokeLinecap="round"
@@ -305,7 +320,11 @@ const PageHeader = () => {
             </svg>
             <span className="md:hidden ml-2">Cart</span>
             {/* ______ counter _____  */}
-            <span className="absolute bg-red-500 text-white -top-1 left-3 rounded-full w-[1.2rem] h-[1.2rem] text-xs flex items-center justify-center">
+            <span className={`${
+                    pathname === "/login" || pathname === "/signup"
+                      ? "hidden"
+                      : ""
+                  } absolute bg-red-500 text-white -top-1 left-3 rounded-full w-[1.2rem] h-[1.2rem] text-xs flex items-center justify-center`}>
               {cartNumber}
             </span>
           </button>
@@ -313,7 +332,7 @@ const PageHeader = () => {
           <button
             className={`${
               pathname === "/login" || pathname === "/signup" ? "" : "hidden"
-            } ml-8 w-fit font-semibold`}
+            } ml-8 w-fit flex gap-2 font-semibold`}
           >
             <NavLink className="hover:underline" to="/login">
               Login
@@ -332,7 +351,11 @@ const PageHeader = () => {
                 : " mr-8"
             } hidden md:flex items-center`}
           >
-            <span className="w-[2.7rem] h-[2.7rem] bg-white text-black md:ml-4 rounded-full flex items-center justify-center cursor-pointer">
+            <span className={`${
+                    pathname === "/login" || pathname === "/signup"
+                      ? "hidden"
+                      : ""
+                  } w-[2.7rem] h-[2.7rem] bg-white text-black md:ml-4 rounded-full flex items-center justify-center cursor-pointer`}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

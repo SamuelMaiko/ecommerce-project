@@ -27,8 +27,8 @@ const HomePage = () => {
     <>
       {/* <PageHeader/>  */}
       <Banner />
-      <PopularSuppliers/>
       <FeaturedProducts />
+      <PopularSuppliers/>
       <ExploreByCategory />
       <AboutUs />
       {/* <Testimonials /> */}

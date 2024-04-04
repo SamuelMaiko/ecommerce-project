@@ -3,9 +3,11 @@ import SingleSupplier from "../components/suppliers/SingleSupplier";
 import instance from "../axios/instance";
 import { useLocation, useNavigate } from "react-router-dom";
 import { getCookie } from "../Cookies/Cookie";
+import Loader from "../components/Loader/Loader";
 
 const Suppliers = () => {
   const [suppliers, setSupplers] = useState([]);
+  const [loadingState, setLoadingState] = useState("loading")
 
   useEffect(() => {
     const getSuppliers = async () => {
@@ -13,6 +15,7 @@ const Suppliers = () => {
         const response = await instance.get("/api/accounts/suppliers/");
         // console.log(response.data.products);
         setSupplers(response.data);
+        setLoadingState("completed")
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -81,11 +84,17 @@ const Suppliers = () => {
             Green Earth as your trusted partner in sourcing raw materials.
           </p>
         </div>
-        <div className=" md:pt-7 flex flex-col items-center h-fit md:grid grid-cols-2 gap-[1.35rem] px-4 pb-[5rem] md:pb-0 ">
+          <div className="w-full h-full">
+          <div className={`${loadingState=="loading"?"":"hidden"} h-[35rem]`}>
+          <Loader/>
+        </div>
+        <div className={`${loadingState==="completed"?"":"hidden"} md:pt-7 flex flex-col items-center h-fit md:grid grid-cols-2 gap-[1.35rem] px-4 pb-[5rem] md:pb-0 `}>
+
           {suppliers &&
             suppliers.map((supplier, index) => {
               return <SingleSupplier key={index} {...supplier} />;
             })}
+            </div>
         </div>
       </div>
     </div>

@@ -6,9 +6,10 @@ const Banner = () => {
   const navigate = useNavigate();
   const bannerStyles = {
     // backgroundColor:"red"
-    background: `linear-gradient(to bottom, #2E4A62, rgba(0,0,0,0.05)), url(${salah})`,
-    backgroundSize: "cover",
+    background: `linear-gradient(to bottom, #2E4A62, rgba(0,0,0,0.05)), url("https://maiko.pythonanywhere.com/media/products/Cobalt_Ore.jpg")`,
+    backgroundSize: "100% 100%",
     backgroundPosition: "bottom",
+    // backgroundRepeat:"repeat",
     color: "#ffffff",
   };
 
